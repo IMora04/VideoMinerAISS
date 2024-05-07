@@ -1,4 +1,4 @@
-package aiss.videominer;
+package aiss.videoMiner;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,10 +7,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-public class VideominerApplication {
+public class VideoMinerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(VideominerApplication.class, args);
+		SpringApplication.run(VideoMinerApplication.class, args);
 	}
 
 	@Bean
