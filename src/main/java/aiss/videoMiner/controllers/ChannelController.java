@@ -1,9 +1,7 @@
 package aiss.videoMiner.controllers;
 
 import aiss.videoMiner.model.Channel;
-import aiss.videoMiner.model.Video;
 import aiss.videoMiner.repository.ChannelRepository;
-import aiss.videoMiner.repository.VideoRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,23 +14,22 @@ import java.util.List;
 public class ChannelController {
 
     @Autowired
-    ChannelRepository repository;
+    ChannelRepository channelRepository;
 
     @GetMapping
-    public List<Channel> findAllChannels() {
-        return repository.findAll();
+    public List<Channel> findAll() {
+        return channelRepository.findAll();
     }
 
     @GetMapping("/{id}")
-    public Channel findOneChannel(@PathVariable String id) {
-        return repository.findById(id).get();
+    public Channel findOne(@PathVariable String id) {
+        return channelRepository.findById(id).get();
     }
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public Channel createVideo(@Valid @RequestBody Channel channel) {
-        return repository.save(channel);
+        return channelRepository.save(channel);
     }
-
 
 }

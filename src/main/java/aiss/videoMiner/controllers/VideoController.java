@@ -2,9 +2,7 @@ package aiss.videoMiner.controllers;
 
 import aiss.videoMiner.model.Video;
 import aiss.videoMiner.repository.VideoRepository;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,16 +13,16 @@ import java.util.Optional;
 public class VideoController {
 
     @Autowired
-    VideoRepository repository;
+    VideoRepository videoRepository;
 
     @GetMapping
-    public List<Video> findAllVideos() {
-        return repository.findAll();
+    public List<Video> findAll() {
+        return videoRepository.findAll();
     }
 
     @GetMapping("/{id}")
-    public Video findOneVideo(@PathVariable String id) {
-        return repository.findById(id).get();
+    public Video findOne(@PathVariable String id) {
+        return videoRepository.findById(id).get();
     }
 
 }

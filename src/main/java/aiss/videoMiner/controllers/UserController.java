@@ -15,15 +15,16 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    UserRepository repository;
+    UserRepository userRepository;
 
     @GetMapping
-    public List<User> findAllUsers(){
-        return repository.findAll();
+    public List<User> findAll(){
+        return userRepository.findAll();
     }
 
     @GetMapping("/{id}")
-    public User findOneUser(@PathVariable String id){
-        return repository.findById(id).get();
+    public User findOne(@PathVariable String id){
+        return userRepository.findById(id).get();
     }
+
 }

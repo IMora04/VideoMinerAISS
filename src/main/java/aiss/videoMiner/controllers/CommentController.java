@@ -15,15 +15,16 @@ import java.util.List;
 public class CommentController {
 
     @Autowired
-    CommentRepository repository;
+    CommentRepository commentRepository;
 
     @GetMapping
-    public List<Comment> findAllComments(){
-        return repository.findAll();
+    public List<Comment> findAll(){
+        return commentRepository.findAll();
     }
 
     @GetMapping("/{id}")
-    public Comment getComment(@PathVariable String id){
-        return repository.findById(id).get();
+    public Comment findOne(@PathVariable String id){
+        return commentRepository.findById(id).get();
     }
+
 }

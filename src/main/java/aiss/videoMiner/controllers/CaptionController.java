@@ -15,15 +15,16 @@ import java.util.List;
 public class CaptionController {
 
     @Autowired
-    CaptionRepository repository;
+    CaptionRepository captionRepository;
 
     @GetMapping
-    public List<Caption> findAllCaptions(){
-        return repository.findAll();
+    public List<Caption> findAll(){
+        return captionRepository.findAll();
     }
 
     @GetMapping("/{id}")
-    public Caption findOneCaption(@PathVariable String id){
-        return repository.findById(id).get();
+    public Caption findOne(@PathVariable String id){
+        return captionRepository.findById(id).get();
     }
+
 }
